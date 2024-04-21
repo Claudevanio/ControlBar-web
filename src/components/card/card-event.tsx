@@ -1,37 +1,47 @@
 import Image from "next/image";
 import { Button } from "@mui/material";
-import { CardEventProps } from "@/types";
 import { DateUtils } from "@/utils";
+import { EventProps } from "@/types";
 
-const CardEvent = ({
-  imgEvent,
-  dateEvent,
-  nameEvent,
-  location,
-  onClick,
-  ...rest
-}: CardEventProps) => {
+type CardEventProps = {
+  event: EventProps;
+  onClick?(): void;
+};
+
+const CardEvent = ({ event, onClick, ...rest }: CardEventProps) => {
+  const {
+    imagemEvento,
+    dataEvento,
+    nomeEvento,
+    enderecoEvento,
+    bairroEvento,
+    cidadeEvento,
+    UfEvento,
+  } = event;
+
   return (
     <Button
       onClick={onClick}
-      className="bg-background w-full p-1 flex-row h-[125px] rounded-[20px] shadow-md"
+      className="bg-background w-full p-1 flex-row h-[8rem] rounded-[20px] shadow-md"
       {...rest}
     >
-      <div className="flex flex-row justify-between gap-2 w-full">
+      <div className="flex flex-row justify-between px-2 w-full">
         <Image
-          src={imgEvent}
+          src={imagemEvento}
           alt="logo-img"
-          width={0}
-          height={0}
-          className="w-[120px] h-full object-contain rounded-[20px]"
+          width={120}
+          height={120}
+          className="object-cover rounded-[20px]"
         />
         <div className="flex flex-col gap-y-1 p-1 text-start justify-center">
-          <div className="text-[#39474F] text-xs font-normal">
-            {DateUtils.toFormatDate(dateEvent, "DD/MM/YYYY")} às{" "}
-            {DateUtils.toFormatDate(dateEvent, "hh:mm")}
+          <div className="text-textPrimary text-xs font-normal">
+            {dataEvento}
+            {/* {DateUtils.toFormatDate(new Date(dataEvento), "hh:mm")} */}
           </div>
-          <div className="text-[#39474F] text-sm font-bold">{nameEvent}</div>
-          <div className="text-[#39474F] text-sm font-normal">{location}</div>
+          <div className="text-textPrimary text-sm font-bold">{nomeEvento}</div>
+          <div className="text-textPrimary text-[14px] font-normal">
+            {enderecoEvento} <br /> {bairroEvento} - {cidadeEvento}/{UfEvento}
+          </div>
         </div>
       </div>
     </Button>
