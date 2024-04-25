@@ -1,0 +1,1 @@
+export type SellingType = "FICHAS" | "CREDITO_CARTAO" | "PRODUTOS_CARTAO"

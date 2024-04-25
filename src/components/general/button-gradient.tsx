@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ButtonBase } from "@mui/material";
 import { ButtonProps } from "@/types";
 
@@ -19,14 +19,14 @@ const ButtonGradient: React.FC<ButtonProps> = ({
       ${className}`}
     >
       <ButtonBase
-        className={`w-full h-full min-h-[40px] rounded-[30px] justify-center items-center normal-case ${
+        onClick={onClick}
+        disabled={disabled}
+        {...rest}
+        className={`w-full h-full min-h-[40px] !rounded-[30px] justify-center items-center normal-case ${
           variant === "primary"
             ? "bg-gradient-to-r from-[#421C6D] to-[#077167]"
             : "bg-white"
         }`}
-        onClick={onClick}
-        disabled={disabled}
-        {...rest}
       >
         {title && (
           <div

@@ -14,7 +14,7 @@ const LoginPage = () => {
   return (
     <main className="flex bg-[#F2F2F2] h-full flex-col items-center justify-center">
       <div className="bg-white w-[430px] min-h-screen">
-        <div className="flex flex-col gap-y-4 p-[10%] h-full items-center justify-center">
+        <div className="flex flex-col gap-y-4 p-[5%] h-full items-center justify-center">
           <div className="items-center mb-20 h-[92px] w-[228px]">
             <Image
               src={profilePic}

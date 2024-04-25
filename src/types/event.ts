@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { SellingType } from "./selling-type";
 
 export type EventProps = {
   dataEvento: string;
@@ -10,4 +11,6 @@ export type EventProps = {
   bairroEvento: string;
   cidadeEvento: string;
   UfEvento: string;
+  tipoVenda: SellingType;
+  taxaCartao: number;
 };

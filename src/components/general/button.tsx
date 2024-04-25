@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ButtonBase } from "@mui/material";
 import { ButtonProps } from "@/types";
 
@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <div
-      className={`w-full min-w-[150px] min-h-[40px] rounded-[30px] 
+      className={`w-full min-w-[150px] py-[0.4rem] rounded-[30px] 
       bg-white 
       ${
         variant === "primary"
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
       ${className}`}
     >
       <ButtonBase
-        className="w-full h-full rounded-[30px] justify-center items-center normal-case"
+        className="flex w-full h-full rounded-[30px] justify-center items-center normal-case"
         onClick={onClick}
         disabled={disabled}
         {...rest}

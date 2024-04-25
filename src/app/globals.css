@@ -26,6 +26,18 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer base {
+  .custom-gradient {
+    background: linear-gradient(90deg, rgba(66,28,109,1) 0%, rgba(7,113,103,1) 60%);
+  }
+
+  .input-custom-gradient > input[type="text"] {
+      background: linear-gradient(90deg, rgba(66,28,109,1) 0%, rgba(7,113,103,1) 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
